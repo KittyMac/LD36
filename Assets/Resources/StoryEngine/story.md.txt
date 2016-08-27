@@ -49,7 +49,7 @@ mom
 #Room6
 
 teacher
- : Well, you were late by an hour. Would you mind sitting down?
+: Well, you were late by an hour. Would you mind sitting down?
  
 1. [In the stupid chair?](#Room7)
 2. [Ok...](#Room8)
