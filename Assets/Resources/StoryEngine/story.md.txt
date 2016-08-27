@@ -217,8 +217,8 @@ pixies
 
 #Room27
 
-Pixies
-: But there is one thing you can do instead of fighting...
+pixies
+: But there is one thing you can do instead of fighting.
 
 1. [What is it?](#Room28)
 
@@ -233,7 +233,7 @@ pixies
 #Room29
 
 pixies
-: Wait... take this mirror!
+: Wait...take this mirror!
 
 1. [Ok, thanks!](#Room30)
 
