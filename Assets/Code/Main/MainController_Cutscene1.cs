@@ -10,9 +10,9 @@ public partial class MainController : MonoBehaviour {
 		string sceneName = "Scenes/" + cutscene.hashtag.Trim ("#".ToCharArray ());
 
 		SceneManager.LoadScene (sceneName, LoadSceneMode.Additive);
-		LeanTween.delayedCall (4.0f, () => {
-			SceneManager.UnloadScene(sceneName);
 
+		NotificationCenter.addObserver (this, "FinishCutscene", null, (args, name) => {
+			SceneManager.UnloadScene(sceneName);
 			LoadRoom(cutscene.room);
 		});
 	}
