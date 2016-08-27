@@ -29,6 +29,10 @@ public class StoryEngine {
 		}
 	}
 
+	public class Cutscene : Room {
+		public string room;
+	}
+
 	public Dictionary<string,Room> AllRooms = new Dictionary<string, Room>();
 
 
@@ -85,7 +89,7 @@ public class StoryEngine {
 			}
 
 			if (currentBlock.blockType == BlockType.p) {
-				//mdStyle.Create_P(container, currentString.ToString());
+				
 			}
 
 			if (currentBlock.blockType == BlockType.h1) {
@@ -108,6 +112,7 @@ public class StoryEngine {
 					currentRoom.responses.Add(currentDialog);
 				}
 			}
+
 			if(currentBlock.blockType == BlockType.dt){
 				if(currentRoom != null) {
 					currentRoom.character = currentString.ToString();
@@ -120,19 +125,22 @@ public class StoryEngine {
 				}
 			}
 
+			if (currentBlock.blockType == BlockType.h2) {
+				if(currentRoom != null){
+					AllRooms[currentRoom.hashtag] = currentRoom;
+				}
+				currentRoom = null;
 
+				Cutscene currentCutscene = new Cutscene();
 
+				string cutsceneNameCombined = currentString.ToString();
+				string[] parts = cutsceneNameCombined.Split("->".ToCharArray());
 
+				currentCutscene.hashtag = "##" + parts[0].Trim();
+				currentCutscene.room = parts[2].Trim();
 
-
-
-
-
-
-
-
-
-			if (currentBlock.blockType == BlockType.h2) {}
+				AllRooms[currentCutscene.hashtag] = currentCutscene;
+			}
 
 			if (currentBlock.blockType == BlockType.h3) {}
 

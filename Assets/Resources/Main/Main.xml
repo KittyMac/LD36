@@ -11,6 +11,7 @@
 
     	<Table title="ResponsesTable" bounds="@eval(w-378,0,378,h)" anchor="stretch,stretch" />
 
+    	<Image title="PlayerImage" resourcePath="StoryEngine/wendy" anchor="bottom,left" bounds="775,0,201,227" />
 
     </Scalar>
 

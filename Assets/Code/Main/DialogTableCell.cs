@@ -78,7 +78,7 @@ public class DialogTableCell : PUTableCell {
 
 		responseText.font = "Fonts/PressStart2P";
 		responseText.value = data.text;
-		responseText.fontSize = 24;
+		responseText.fontSize = 22;
 		responseText.lineSpacing = 1.4f;
 		responseText.fontColor = Color.white;
 		responseText.alignment = PlanetUnity2.TextAlignment.upperLeft;
