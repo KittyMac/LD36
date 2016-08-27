@@ -101,7 +101,7 @@ littlesister
 
 #Room12
 
-Thought
+thought
 : Time to go to the...OUCH! I fell on a... History Book?
 
 1. [Read Book](#Room13)
@@ -138,7 +138,8 @@ mom
 1. [Good night!](#Room17)
 
 #Room17
-thought1
+
+thought
 : Look, she locked the door!
 
 1. [So what...](#Room18)
@@ -160,13 +161,13 @@ book
 
 #Room20
 
-Voice in head
+thought
 : Go to the abandoned shack
 
 1. [Sounds legit, I'm going](#Room21)
 2. [Yah, no.](#Room14)
 
-#Room 21
+#Room21
 
 Friend
 : What are you doing here? You shouldn't go to the abandoned shack. Whoever goes i never comes back out.
