@@ -157,7 +157,7 @@ RIP
 #Room19
 
 book
-: This world's light is made my a single beam, bouncing off multiple mirrors.
+: This world's light is made by a single beam, bouncing off multiple mirrors.
 
 1. [Go on adventure](#Room20)
 
@@ -214,9 +214,9 @@ pixies
 pixies
 : Incorrect. Prepare to fight us for passage.
 
-1. [Wait, what?](#Room28)
-2. [I'm not fighting two pixies!](#Room28)
-3. [Bring it on!](#Room28)
+1. [Wait, what?](#Room27)
+2. [I'm not fighting two pixies!](#Room27)
+3. [Bring it on!](#Room27)
 
 #Room27
 
