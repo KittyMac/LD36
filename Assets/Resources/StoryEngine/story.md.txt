@@ -217,22 +217,25 @@ pixies
 
 #Room27
 
-After fight scene
+Pixies
+: But there is one thing you can do instead of fighting...
+
+1. [What is it?](#Room28)
 
 #Room28
 
 pixies
-: You may go
+: Boysenberry lollipops! Our favorite!
 
-1. [Thank you.](#Room29)
-2. [Ha, I won!](#Room29)
+1. [No! Anything bt the Boysenberry lollipops!](#Room18)
+2. [Ok, here they are! Have as many as you like!](#Room29)
 
 #Room29
 
 pixies
 : Wait... take this mirror!
 
-1. [Ok](#Room30)
+1. [Ok, thanks!](#Room30)
 
 #Room30
 
@@ -247,7 +250,7 @@ mirror
 sign
 : Put mirror in box to save Atlantis!
 
-1. [Put mirror in box](#CutsceneEnd)
+1. [Put mirror in box](##CutsceneEnd)
 1. [Don't put mirror in box](#Room18)
 
 ##CutsceneEnd
