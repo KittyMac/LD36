@@ -49,7 +49,7 @@ mom
 #Room6
 
 teacher
-: Well, you were late by an hour. Would you mind sitting down?
+ : Well, you were late by an hour. Would you mind sitting down?
  
 1. [In the stupid chair?](#Room7)
 2. [Ok...](#Room8)
@@ -68,16 +68,19 @@ teacher
 teacher
 : Well, you go on then
 
-1. [Thanks!](#Room10)
-2. [Bye!](#Room10)
+1. [Thanks!](##Cutscene1)
+2. [Bye!](##Cutscene1)
 
 #Room9
 
 teacher
 : Principals office
 
-1. [But...Fine.](#Room10)
-2. [Ok...](#Room10)
+1. [But...Fine.](##Cutscene1)
+2. [Ok...](##Cutscene1)
+
+##Cutscene1 -> #Room10
+
 
 #Room10
 
@@ -98,7 +101,7 @@ littlesister
 
 #Room12
 
-Gil
+Thought
 : Time to go to the...OUCH! I fell on a... History Book?
 
 1. [Read Book](#Room13)
@@ -135,7 +138,7 @@ mom
 1. [Good night!](#Room17)
 
 #Room17
-Jil
+thought1
 : Look, she locked the door!
 
 1. [So what...](#Room18)
@@ -211,5 +214,41 @@ Pixies
 2. [I'm not fighting two pixies!](#Room27)
 3. [Bring it on!](#Room27)
 
+#Room27
 
+After fight scene
+
+#Room28
+
+Pixies
+: You may go
+
+1. [Thank you.](#Room29)
+2. [Ha, I won!](#Room29)
+
+#Room29
+
+pixies
+: wait... take these
+
+1.put mirrors in invetory
+
+#Room30
+
+mirror
+: The mirror shines pretty
+
+1. take the mirror
+2. walks up stairs
+
+#Room31
+
+Sign
+:Put mirrors in box
+
+1: [Put mirrors in box](#Room32)
+
+#Room32
+
+You Won! You saved the city of Atlantis
 
