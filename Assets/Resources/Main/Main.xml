@@ -1,6 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Canvas renderMode="ScreenSpaceCamera" xmlns="http://schema.smallplanet.com/PlanetUnity2.xsd" >
-    <Color color="#FFFFFFFF" anchor="stretch,stretch" />
+    <Color color="#000000FF" anchor="stretch,stretch" />
+
+    <Scalar bounds="0,0,1024,768">
+    	<Image resourcePath="StoryEngine/background" bounds="0,0,1024,768" pivot="0.5,0.5" anchor="middle,center" />
+
+    	<Image title="CharacterImage" pivot="0.5,0.0" anchor="bottom,left" bounds="273,270,100,100" />
+
+    	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#FFFFFFFF" alignment="upperCenter" bounds="0,0,546,220" />
+
+    	<SimpleTable title="ResponsesTable" bounds="646,0,378,768" />
+
+
+    </Scalar>
 
     <Code class="MainController" />
 </Canvas>

@@ -1,4 +1,4 @@
-#Room1
+#StartingRoom
 
 mom
 : Good morning, dear.  Pancakes?
@@ -13,7 +13,7 @@ mom
 mom
 : Sorry, no pancakes for you.
 
-1. [aww man](#Room1)
+1. [aww man](#StartingRoom)
 
 #Room3
 

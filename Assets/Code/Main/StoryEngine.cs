@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using MarkdownDeep;
 using System.Text;
-using Eppy;
 
 public class StoryEngine {
 
@@ -33,7 +32,16 @@ public class StoryEngine {
 
 
 
-	// ************************ LOAD STORY FROM MARKDOWN *********************************
+	// ************************ UTILITY *********************************
+
+	public Room GetRoom(string name) {
+		if (AllRooms.ContainsKey (name)) {
+			return AllRooms [name];
+		}
+
+		Debug.Log ("room does not exist: " + name);
+		return null;
+	}
 
 	public void PrintAllRooms () {
 		foreach (Room r in AllRooms.Values) {
