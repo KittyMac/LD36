@@ -1,36 +1,80 @@
 #StartingRoom
 
 mom
-: Good morning, dear.  Pancakes?
+: Good mornining Sweetie!
 
-1. [Yes](#Room2)
-2. [No](#Room2)
-3. [Never!](#Room3)
-4. [Blueberries?](#Room2)
-
+1. [ Good Morning, mom](#Room2)
+2. [Don't call me sweetie!](#Room2)
+3. [Hey](#Room2)
+4. [Whatever, I'm going to be late for school.](#Room3)
 
 
 #Room2
 
 mom
-: Sorry, no pancakes for you.
+: Well, what would you like to eat?
 
-1. [aww man](#StartingRoom)
-
+1. [PANCAKES! I mean, pancakes please!](#Room3)
+2. [Actually, I'm going to be late for school...](#Room3)
 
 
 #Room3
 
 mom
-: Well, get you gone to school then.
+: Oh well, your sister ate all the pancakes anyway, off to school then!
 
 1. [Bye](#Room4)
-
+2. [See you after school!](#Room4)
+3. [Whatever, I'm getting sis back for eating my waffles!](#Room4)
+4. [I'm not going to school!](#Room5)
 
 #Room4
 
-rip
-: Game Over
+teacher
+: Gil, why are you late for school?
+
+1. [Because I can](#Room6)
+2. [I'm so sorry, I slept in!](#Room6)
+3. [How late am I?](#Room6)
 
 
 ------
+#Room5
+
+mom
+:Oh yes you are!
+
+1. [Nooooooo!](#Room4)
+
+#Room6
+
+teacher
+ : Well, you were late by an hour. Would you mind sitting down?
+ 
+1. [In the stupid chair?](#Room7)
+2. [Ok...](#Room8)
+3. [Actually, can I go to the bathroom?](#Room8)
+ 
+#Room7        
+ 
+teacher
+: No, your normal seat.
+ 
+1. [Ok](#Room8)
+2. [No way!](#Room9)
+
+#Room8
+
+teacher
+: Well, you go on then
+
+1. [Thanks!](#Room10)
+2. [Bye!](#Room10)
+
+#Room9
+
+teacher
+:Principals office
+
+1. [But...Fine.](
+2. [Ok...](#Room10)
