@@ -7,6 +7,7 @@ public class MainController : MonoBehaviour {
 
 	public PUText CharacterDialog;
 	public PUImage CharacterImage;
+	public PUImage Spotlight;
 	public PUTable ResponsesTable;
 
 	private string StartingRoom = "#StartingRoom";
@@ -15,6 +16,10 @@ public class MainController : MonoBehaviour {
 
 	public void Start () {
 		engine.LoadStoryFromMarkdown ("StoryEngine/story.md");
+
+		CharacterImage.image.color = Color.black;
+		Spotlight.CheckCanvasGroup ();
+		Spotlight.canvasGroup.alpha = 0.0f;
 
 		LoadRoom (StartingRoom);
 
@@ -31,13 +36,13 @@ public class MainController : MonoBehaviour {
 
 		CurrentRoom = roomName;
 
-		CharacterImage.LoadImageWithResourcePath ("StoryEngine/" + room.character);
-		if (CharacterImage.image.sprite != null) {
-			CharacterImage.rectTransform.sizeDelta = CharacterImage.image.sprite.textureRect.size;
-		}
-
 		CharacterDialog.text.text = string.Format ("{0}\n\n\"{1}\"", room.character, room.text);
-		float currentDelay = DialogTableCell.AnimateText (DialogTableCell.DialogType.Character, CharacterDialog, 0.0f);
+
+		float currentDelay = 0.0f;
+
+		currentDelay += SwitchToCharacter(room.character);
+
+		currentDelay += DialogTableCell.AnimateText (DialogTableCell.DialogType.Character, CharacterDialog, currentDelay);
 
 		List<object> allItemsForTable = new List<object> ();
 		foreach (StoryEngine.Dialog dialog in room.responses) {
@@ -48,6 +53,45 @@ public class MainController : MonoBehaviour {
 
 		ResponsesTable.SetObjectList (allItemsForTable);
 		ResponsesTable.ReloadTable ();
+
+
+	}
+		
+	private float SwitchToCharacter(string name) {
+		string characterPath = "StoryEngine/" + name;
+		float animateInTime = 0.6f;
+		float animateOutTime = animateInTime * 0.6f;
+
+		// If the character is already there, don't do anything
+		if (CharacterImage.resourcePath != null && CharacterImage.resourcePath.Equals (characterPath)) {
+			return 0.0f;
+		}
+
+		// Animate out the current character!
+		if (CharacterImage.resourcePath != null) {
+			LeanTween.value (Spotlight.gameObject, (v) => {
+				Spotlight.canvasGroup.alpha = v;
+				CharacterImage.image.color = new Color (v, v, v, 1.0f);
+			}, 1.0f, 0.0f, animateOutTime);
+		}
+
+		LeanTween.delayedCall (animateOutTime, () => {
+			// Load in the new character image
+			CharacterImage.LoadImageWithResourcePath (characterPath);
+			if (CharacterImage.image.sprite != null) {
+				CharacterImage.rectTransform.sizeDelta = CharacterImage.image.sprite.textureRect.size;
+			}
+		});
+
+		// Animate in the new character
+		// animate in the character
+		Spotlight.canvasGroup.alpha = 0.0f;
+		LeanTween.value (Spotlight.gameObject, (v) => {
+			Spotlight.canvasGroup.alpha = v;
+			CharacterImage.image.color = new Color (v, v, v, 1.0f);
+		}, 0.0f, 1.0f, animateInTime).setDelay (animateOutTime);
+
+		return animateInTime + animateOutTime;
 	}
 
 
