@@ -10,6 +10,7 @@ public class StoryEngine {
 	public class Dialog {
 		public string text;
 		public string room;
+		public float animationDelay;
 	}
 
 	public class Room {
@@ -237,7 +238,7 @@ public class StoryEngine {
 			AllRooms[currentRoom.hashtag] = currentRoom;
 		}
 
-		PrintAllRooms ();
+		//PrintAllRooms ();
 	}
 
 	// *********************************************************************************

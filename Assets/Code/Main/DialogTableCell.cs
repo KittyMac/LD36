@@ -5,6 +5,72 @@ using System.Collections.Generic;
 
 public class DialogTableCell : PUTableCell {
 
+	public enum DialogType {
+		Character,
+		Response
+	}
+
+	static public float AnimateTextDuration(DialogType type, string content) {
+		if (type == DialogType.Character) {
+			return content.Length * 0.05f;
+		} else if (type == DialogType.Response) {
+			return 0.47f;
+		}
+
+		return 0;
+	}
+
+	static public float AnimateText(DialogType type, PUText text, float delay) {
+		if (type == DialogType.Character) {
+			return AnimateTextTyping (type, text, delay);
+		} else if (type == DialogType.Response) {
+			return AnimateTextMoveIn (type, text, delay);
+		}
+
+		return AnimateTextMoveIn (type, text, delay);
+	}
+
+
+	static private float AnimateTextMoveIn(DialogType type, PUText text, float delay) {
+
+		float duration = AnimateTextDuration (type, text.text.text);
+
+		if (type == DialogType.Response) {
+			// animate in from the right
+
+			text.rectTransform.anchoredPosition = new Vector2(text.rectTransform.rect.width, 0);
+			LeanTween.value (text.gameObject, (v) => {
+				text.rectTransform.anchoredPosition = new Vector2(v, 0);
+			}, text.rectTransform.rect.width, 0, duration).setEase (LeanTweenType.easeOutCubic).setDelay (delay);
+
+		} else if(type == DialogType.Character) {
+			// animate in from the bottom
+
+			text.rectTransform.anchoredPosition = new Vector2(0, -text.rectTransform.rect.height);
+			LeanTween.value (text.gameObject, (v) => {
+				text.rectTransform.anchoredPosition = new Vector2(0, -v);
+			}, text.rectTransform.rect.height, 0, duration).setEase (LeanTweenType.easeOutCubic).setDelay (delay);
+
+		}
+
+		return duration + delay;
+	}
+
+	static private float AnimateTextTyping(DialogType type, PUText text, float delay) {
+		string content = text.text.text;
+
+		text.text.text = "";
+		LeanTween.value (text.gameObject, (v) => {
+			text.text.text = content.Substring(0, Mathf.RoundToInt(v));
+		}, 0, content.Length, AnimateTextDuration(type, content)).setEase (LeanTweenType.linear).setDelay (delay);
+
+		return AnimateTextDuration(type, content) + delay;
+	}
+
+	// **************************************************************************************************************
+
+
+
 	public override void UpdateContents() {
 		StoryEngine.Dialog data = cellData as StoryEngine.Dialog;
 
@@ -27,12 +93,18 @@ public class DialogTableCell : PUTableCell {
 
 		puGameObject.rectTransform.sizeDelta = new Vector2 (responseText.rectTransform.rect.width, height);
 
-		//<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#FFFFFFFF" alignment="upperCenter" bounds="0,0,546,220" />
-
 		responseText.button.onClick.AddListener (() => {
 			NotificationCenter.postNotification(null, "NavigateToRoom", NotificationCenter.Args("room", data.room));
 		});
 
+		AnimateText (DialogType.Response, responseText, data.animationDelay);
+
+		/*
+		responseText.rectTransform.anchoredPosition = new Vector2(responseText.rectTransform.rect.width, 0);
+		LeanTween.value (puGameObject.gameObject, (v) => {
+			responseText.rectTransform.anchoredPosition = new Vector2(v, 0);
+		}, responseText.rectTransform.rect.width, 0, 0.47f).setDelay (UnityEngine.Random.Range (0.67f, 1.32f)).setEase (LeanTweenType.easeInOutQuad);
+		*/
 	}
 
 }

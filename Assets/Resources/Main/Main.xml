@@ -7,7 +7,7 @@
 
     	<Image title="CharacterImage" pivot="0.5,0.0" anchor="bottom,left" bounds="273,270,100,100" />
 
-    	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#FFFFFFFF" alignment="upperCenter" bounds="0,0,546,220" />
+    	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#DDDDDDFF" alignment="upperCenter" bounds="0,0,546,220" />
 
     	<Table title="ResponsesTable" bounds="@eval(w-378,0,378,h)" anchor="stretch,stretch" />
 

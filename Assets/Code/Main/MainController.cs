@@ -37,14 +37,18 @@ public class MainController : MonoBehaviour {
 		}
 
 		CharacterDialog.text.text = string.Format ("{0}\n\n\"{1}\"", room.character, room.text);
-
+		float currentDelay = DialogTableCell.AnimateText (DialogTableCell.DialogType.Character, CharacterDialog, 0.0f);
 
 		List<object> allItemsForTable = new List<object> ();
 		foreach (StoryEngine.Dialog dialog in room.responses) {
+			dialog.animationDelay = currentDelay;
+			currentDelay += DialogTableCell.AnimateTextDuration (DialogTableCell.DialogType.Response, dialog.text);
 			allItemsForTable.Add (dialog);
 		}
 
 		ResponsesTable.SetObjectList (allItemsForTable);
 		ResponsesTable.ReloadTable ();
 	}
+
+
 }
