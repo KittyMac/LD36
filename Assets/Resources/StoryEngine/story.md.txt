@@ -42,7 +42,7 @@ teacher
 #Room5
 
 mom
-:Oh yes you are!
+: Oh yes you are!
 
 1. [Nooooooo!](#Room4)
 
@@ -74,7 +74,142 @@ teacher
 #Room9
 
 teacher
-:Principals office
+: Principals office
 
-1. [But...Fine.](
+1. [But...Fine.](#Room10)
 2. [Ok...](#Room10)
+
+#Room10
+
+littlesister
+: What are you doing out of class
+
+1. [PANCAKE STEALER!](#Room11)
+2. [I could ask the same for you.](#Room11)
+3. [Bathroom.](#Room11)
+
+#Room11
+
+littlesister
+: I uh, have to go, BYE!
+
+1. [Uh, bye?](#Room12) 
+
+
+#Room12
+
+Gil
+: Time to go to the...OUCH! I fell on a... History Book?
+
+1. [Read Book](#Room13)
+2. [Don't read book](#Room14)
+
+#Room13
+
+book
+: The lights shall go out year 3,618
+
+1. [But it is year 3,618! I have to do something!I guess a good place to start would be to read the book](#Room19)
+2. [It's year 3,618, but it's probably a prank. I'm going home.](#Room14) 
+
+#Room14
+
+mom
+: What are you doing home, sweetie? Shouldn't you be in school?
+
+1. [I'm *Mouths* Lost my voice](#Room15)
+2. [I'm *Cough cough cough* uh, *Cough* Sick.](#Room15)
+
+#Room15
+
+mom
+: Oh, in that case, you better be getting to bed.
+
+1. [Oh, ok](#Room16)
+
+#Room16
+
+mom
+: You just sleep tight.
+
+1. [Good night!](#Room17)
+
+#Room17
+Jil
+: Look, she locked the door!
+
+1. [So what...](#Room18)
+2. [UH OH!](#Room18)
+
+#Room18
+RIP
+: Game Over
+
+
+1. [Restart](#StartingRoom)
+
+#Room19
+
+book
+: This world's light is made my a single beam, bouncing off multiple mirrors.
+
+1. [Go on adventure](#Room20)
+
+#Room20
+
+Voice in head
+: Go to the abandoned shack
+
+1. [Sounds legit, I'm going](#Room21)
+2. [Yah, no.](#Room14)
+
+#Room 21
+
+Friend
+: What are you doing here? You shouldn't go to the abandoned shack. Whoever goes i never comes back out.
+
+1. [I don't care let me through.](#Room22)
+2. [Please let me through, I plan on coming back.](#Room23)
+
+#Room22
+
+friend
+: You shouldn't be so mean. I'm getting your mom
+
+1. [But-](#Room18)
+
+#Room23
+
+friend: Ok, fine. I'll let you through. But remember, they always say they plan on returning.
+
+1. [Actually, I'm not cut out for this. I'm going back home.](#Room14)
+2. [This seems scary, but it's for the good of Atlantis!](#Room24) 
+
+#Room24
+
+Pixies
+: Password?
+
+1. [Uh, Um, is it, password?](#Room25)
+2. [Possibly, Boysenberry?](#Room26)
+
+#Room25
+
+Pixies
+: Incorrect. Last try.
+
+1. [It has to be... Death Bunny!](#Room26)
+2. [What about levan Polkka?](#Room26)
+3. [PASSWORD!](#Room26)
+
+#Room26
+
+Pixies
+: Incorrect. Prepare to fight us for passage.
+
+1. [Wait, what?](#Room27)
+2. [I'm not fighting two pixies!](#Room27)
+3. [Bring it on!](#Room27)
+
+
+
