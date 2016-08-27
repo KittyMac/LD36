@@ -1,0 +1,29 @@
+#Room1
+
+mom
+: Good morning, dear.  Pancakes?
+
+1. [Yes](#Room2)
+2. [No](#Room2)
+3. [Never!](#Room3)
+4. [Blueberries?](#Room2)
+
+#Room2
+
+mom
+: Sorry, no pancakes for you.
+
+1. [aww man](#Room1)
+
+#Room3
+
+mom
+: Well, get you gone to school then.
+
+1. [Bye](#Room4)
+
+
+#Room4
+
+rip
+: Game Over

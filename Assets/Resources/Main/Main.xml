@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <Canvas renderMode="ScreenSpaceCamera" xmlns="http://schema.smallplanet.com/PlanetUnity2.xsd" >
     <Color color="#FFFFFFFF" anchor="stretch,stretch" />
+
+    <Code class="MainController" />
 </Canvas>
