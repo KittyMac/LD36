@@ -7,6 +7,7 @@ public class MainController : MonoBehaviour {
 
 	public PUText CharacterDialog;
 	public PUImage CharacterImage;
+	public PUTable ResponsesTable;
 
 	private string StartingRoom = "#StartingRoom";
 	private string CurrentRoom = null;
@@ -16,6 +17,10 @@ public class MainController : MonoBehaviour {
 		engine.LoadStoryFromMarkdown ("StoryEngine/story.md");
 
 		LoadRoom (StartingRoom);
+
+		NotificationCenter.addObserver (this, "NavigateToRoom", null, (args, name) => {
+			LoadRoom (args ["room"].ToString ());
+		});
 	}
 
 	public void LoadRoom(string roomName) {
@@ -27,8 +32,19 @@ public class MainController : MonoBehaviour {
 		CurrentRoom = roomName;
 
 		CharacterImage.LoadImageWithResourcePath ("StoryEngine/" + room.character);
-		CharacterImage.rectTransform.sizeDelta = CharacterImage.image.sprite.textureRect.size;
+		if (CharacterImage.image.sprite != null) {
+			CharacterImage.rectTransform.sizeDelta = CharacterImage.image.sprite.textureRect.size;
+		}
 
 		CharacterDialog.text.text = string.Format ("{0}\n\n\"{1}\"", room.character, room.text);
+
+
+		List<object> allItemsForTable = new List<object> ();
+		foreach (StoryEngine.Dialog dialog in room.responses) {
+			allItemsForTable.Add (dialog);
+		}
+
+		ResponsesTable.SetObjectList (allItemsForTable);
+		ResponsesTable.ReloadTable ();
 	}
 }

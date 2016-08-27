@@ -8,12 +8,16 @@ mom
 3. [Never!](#Room3)
 4. [Blueberries?](#Room2)
 
+
+
 #Room2
 
 mom
 : Sorry, no pancakes for you.
 
 1. [aww man](#StartingRoom)
+
+
 
 #Room3
 
@@ -27,3 +31,6 @@ mom
 
 rip
 : Game Over
+
+
+------

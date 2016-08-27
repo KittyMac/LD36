@@ -9,7 +9,7 @@
 
     	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#FFFFFFFF" alignment="upperCenter" bounds="0,0,546,220" />
 
-    	<SimpleTable title="ResponsesTable" bounds="646,0,378,768" />
+    	<Table title="ResponsesTable" bounds="@eval(w-378,0,378,h)" anchor="stretch,stretch" />
 
 
     </Scalar>

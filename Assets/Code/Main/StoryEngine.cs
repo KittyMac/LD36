@@ -173,59 +173,59 @@ public class StoryEngine {
 			
 		string htmlTranslation = md.Transform (markdownString, out definitions, (block, token, tokenString) => {
 
-			if(block != null){
+			if (block != null) {
 				//Debug.Log ("block: " + block.blockType + " :: " + block.Content);
 
-				CommitMarkdownBlock();
+				CommitMarkdownBlock ();
 
 				currentBlock = block;
 
 				currentString.Length = 0;
 			}
 
-			if(token != null) {
+			if (token != null) {
 				//Debug.Log ("token: " + token.type);
 
-				if(token.type == TokenType.img){
+				if (token.type == TokenType.img) {
 					//mdStyle.Create_IMG(container, link.def.url, link.link_text);
 				}
 
-				if(token.type == TokenType.Text){
-					currentString.Append(tokenString, token.startOffset, token.length);
+				if (token.type == TokenType.Text) {
+					currentString.Append (tokenString, token.startOffset, token.length);
 				}
 
 
-				if(token.type == TokenType.code_span){
+				if (token.type == TokenType.code_span) {
 					//mdStyle.Tag_Code(container, currentString, true);
 					//currentString.Append(tokenString, token.startOffset, token.length);
 					//mdStyle.Tag_Code(container, currentString, false);
 				}
 
-				if(token.type == TokenType.open_strong){
+				if (token.type == TokenType.open_strong) {
 					//mdStyle.Tag_Strong(container, currentString, true);
 				}
 
-				if(token.type == TokenType.close_strong){
+				if (token.type == TokenType.close_strong) {
 					//mdStyle.Tag_Strong(container, currentString, false);
 				}
 
-				if(token.type == TokenType.br){
+				if (token.type == TokenType.br) {
 					//mdStyle.Tag_BreakingReturn(container, currentString);
 				}
 
-				if(token.type == TokenType.link){
+				if (token.type == TokenType.link) {
 					LinkInfo link = token.data as LinkInfo;
-					if(currentDialog != null) {
+					if (currentDialog != null) {
 						currentDialog.room = link.def.url;
-						currentDialog.text = link.link_text;
+						currentDialog.text = "\"" + link.link_text + "\"";
 					}
 				}
 
-				if(token.type == TokenType.open_em){
+				if (token.type == TokenType.open_em) {
 					//mdStyle.Tag_Emphasis(container, currentString, true);
 				}
 
-				if(token.type == TokenType.close_em){
+				if (token.type == TokenType.close_em) {
 					//mdStyle.Tag_Emphasis(container, currentString, false);
 				}
 
