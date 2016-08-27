@@ -11,7 +11,7 @@ public partial class MainController : MonoBehaviour {
 	public PUTable ResponsesTable;
 	public PUImage PlayerImage;
 
-	private string StartingRoom = "#StartingRoom";
+	private string StartingRoom = "##Titlescene";
 	private string CurrentRoom = null;
 	private StoryEngine engine = new StoryEngine ();
 
