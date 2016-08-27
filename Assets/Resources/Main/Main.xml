@@ -3,15 +3,18 @@
     <Color color="#000000FF" anchor="stretch,stretch" />
 
     <Scalar bounds="0,0,1024,768">
-    	<Image title="Spotlight" resourcePath="StoryEngine/background" bounds="60,167,433,601" anchor="bottom,left" />
 
-    	<Image title="CharacterImage" pivot="0.5,0.0" anchor="bottom,left" bounds="273,270,100,100" />
+    	<Color color="#FFFFFFFF" mask="true" bounds="0,0,1024,768">
+	    	<Image title="Spotlight" resourcePath="StoryEngine/background" bounds="60,167,433,601" anchor="bottom,left" />
 
-    	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#DDDDDDFF" alignment="upperCenter" bounds="0,0,546,220" />
+	    	<Image title="CharacterImage" pivot="0.5,0.0" anchor="bottom,left" bounds="273,270,100,100" />
 
-    	<Table title="ResponsesTable" bounds="@eval(w-378,0,378,h)" anchor="stretch,stretch" />
+	    	<Text title="CharacterDialog" font="Fonts/PressStart2P" sizeToFit="true" maxFontSize="24" lineSpacing="1.4" fontColor="#DDDDDDFF" alignment="upperCenter" bounds="0,0,546,220" />
 
-    	<Image title="PlayerImage" resourcePath="StoryEngine/wendy" anchor="bottom,left" bounds="775,0,201,227" />
+	    	<Image title="PlayerImage" resourcePath="StoryEngine/wendy" anchor="bottom,left" bounds="1024,0,201,227" />
+
+	    	<Table title="ResponsesTable" bounds="@eval(w-378,0,378,h)" anchor="stretch,stretch" />
+    	</Color>
 
     </Scalar>
 

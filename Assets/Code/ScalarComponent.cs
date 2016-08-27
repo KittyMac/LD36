@@ -27,15 +27,13 @@ public class ScalarComponent : MonoBehaviour {
 			float screenAspect = parentTransform.rect.width / parentTransform.rect.height;
 			float scale = 1.0f;
 
-			if (designedAspect <= screenAspect) {
+			if (designedAspect > screenAspect) {
 				scale = parentTransform.rect.width / size.x;
 			} else {
 				scale = parentTransform.rect.height / size.y;
 			}
 
 			gameObject.transform.localScale = new Vector3 (scale, scale, scale);
-
-			rectTransform.sizeDelta = new Vector2 (parentTransform.rect.width / scale, parentTransform.rect.height / scale);
 		}
 	}
 

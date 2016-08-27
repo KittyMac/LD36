@@ -44,7 +44,7 @@ public partial class MainController : MonoBehaviour {
 			Spotlight.CheckCanvasGroup ();
 			Spotlight.canvasGroup.alpha = 0.0f;
 
-			AnimateOutPlayer (0);
+			PlayerImage.rectTransform.anchoredPosition = new Vector2 (775.0f + PlayerImage.rectTransform.rect.width * 2.0f, PlayerImage.rectTransform.anchoredPosition.y);
 			return;
 		}
 

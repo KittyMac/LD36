@@ -230,7 +230,7 @@ pixies
 pixies
 : Boysenberry lollipops! Our favorite!
 
-1. [No! Anything bt the Boysenberry lollipops!](#Room18)
+1. [No! Anything but the Boysenberry lollipops!](#Room18)
 2. [Ok, here they are! Have as many as you like!](#Room29)
 
 #Room29
@@ -246,15 +246,17 @@ mirror
 : The mirror shines pretty
 
 1. [Take the mirror](#Room31)
-2. [Walks up stairs](#Room31)
+2. [Walks up stairs](#Room18)
 
 #Room31
 
 sign
 : Put mirror in box to save Atlantis!
 
-1. [Put mirror in box](##CutsceneEnd)
+1. [Put mirror in box](##Endscene)
 1. [Don't put mirror in box](#Room18)
 
-##CutsceneEnd
+##Endscene -> #StartingRoom
+
+------
 

@@ -60,15 +60,13 @@ public class PUScalar : PUGameObject {
 			float screenAspect = parentTransform.rect.width / parentTransform.rect.height;
 			float scale = 1.0f;
 
-			if (designedAspect <= screenAspect) {
+			if (designedAspect > screenAspect) {
 				scale = parentTransform.rect.width / size.Value.x;
 			} else {
 				scale = parentTransform.rect.height / size.Value.y;
 			}
 
 			gameObject.transform.localScale = new Vector3 (scale, scale, scale);
-
-			rectTransform.sizeDelta = new Vector2 (parentTransform.rect.width / scale, parentTransform.rect.height / scale);
 		}
 	}
 
