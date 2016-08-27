@@ -31,7 +31,7 @@ mom
 #Room4
 
 teacher
-: Gil, why are you late for school?
+: Why are you late for school?
 
 1. [Because I can](#Room6)
 2. [I'm so sorry, I slept in!](#Room6)
