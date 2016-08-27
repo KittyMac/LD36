@@ -3,9 +3,9 @@
 mom
 : Good mornining Sweetie!
 
-1. [ Good Morning, mom](#Room2)
+1. [Good Morning, Mom.](#Room2)
 2. [Don't call me sweetie!](#Room2)
-3. [Hey](#Room2)
+3. [Hey.](#Room2)
 4. [Whatever, I'm going to be late for school.](#Room3)
 
 
@@ -149,7 +149,6 @@ thought
 RIP
 : Game Over
 
-
 1. [Restart](#StartingRoom)
 
 #Room19
@@ -169,8 +168,8 @@ thought
 
 #Room21
 
-Friend
-: What are you doing here? You shouldn't go to the abandoned shack. Whoever goes i never comes back out.
+friend
+: What are you doing here? You shouldn't go to the abandoned shack. Whoever goes in never comes back out.
 
 1. [I don't care let me through.](#Room22)
 2. [Please let me through, I plan on coming back.](#Room23)
@@ -184,14 +183,15 @@ friend
 
 #Room23
 
-friend: Ok, fine. I'll let you through. But remember, they always say they plan on returning.
+friend
+: Ok, fine. I'll let you through. But remember, they always say they plan on returning.
 
 1. [Actually, I'm not cut out for this. I'm going back home.](#Room14)
 2. [This seems scary, but it's for the good of Atlantis!](#Room24) 
 
 #Room24
 
-Pixies
+pixies
 : Password?
 
 1. [Uh, Um, is it, password?](#Room25)
@@ -199,7 +199,7 @@ Pixies
 
 #Room25
 
-Pixies
+pixies
 : Incorrect. Last try.
 
 1. [It has to be... Death Bunny!](#Room26)
@@ -208,12 +208,12 @@ Pixies
 
 #Room26
 
-Pixies
+pixies
 : Incorrect. Prepare to fight us for passage.
 
-1. [Wait, what?](#Room27)
-2. [I'm not fighting two pixies!](#Room27)
-3. [Bring it on!](#Room27)
+1. [Wait, what?](#Room28)
+2. [I'm not fighting two pixies!](#Room28)
+3. [Bring it on!](#Room28)
 
 #Room27
 
@@ -221,7 +221,7 @@ After fight scene
 
 #Room28
 
-Pixies
+pixies
 : You may go
 
 1. [Thank you.](#Room29)
@@ -230,26 +230,25 @@ Pixies
 #Room29
 
 pixies
-: wait... take these
+: Wait... take this mirror!
 
-1.put mirrors in invetory
+1. [Ok](#Room30)
 
 #Room30
 
 mirror
 : The mirror shines pretty
 
-1. take the mirror
-2. walks up stairs
+1. [Take the mirror](#Room31)
+2. [Walks up stairs](#Room31)
 
 #Room31
 
-Sign
-:Put mirrors in box
+sign
+: Put mirror in box to save Atlantis!
 
-1: [Put mirrors in box](#Room32)
+1. [Put mirror in box](#CutsceneEnd)
+1. [Don't put mirror in box](#Room18)
 
-#Room32
-
-You Won! You saved the city of Atlantis
+##CutsceneEnd
 
