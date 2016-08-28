@@ -57,6 +57,14 @@ public partial class MainController : MonoBehaviour {
 		currentDelay += DialogTableCell.AnimateText (DialogTableCell.DialogType.Character, CharacterDialog, currentDelay);
 
 		List<object> allItemsForTable = new List<object> ();
+
+		StoryEngine.Dialog header = new StoryEngine.Dialog ();
+		header.text = "Select a response below:";
+		header.isHelpHeader = true;
+		header.animationDelay = currentDelay;
+		currentDelay += DialogTableCell.AnimateTextDuration (DialogTableCell.DialogType.Response, header.text);
+		allItemsForTable.Add (header);
+
 		foreach (StoryEngine.Dialog dialog in room.responses) {
 			dialog.animationDelay = currentDelay;
 			currentDelay += DialogTableCell.AnimateTextDuration (DialogTableCell.DialogType.Response, dialog.text);

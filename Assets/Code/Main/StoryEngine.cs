@@ -11,6 +11,7 @@ public class StoryEngine {
 		public string text;
 		public string room;
 		public float animationDelay;
+		public bool isHelpHeader;
 	}
 
 	public class Room {

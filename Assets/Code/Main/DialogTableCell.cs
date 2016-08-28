@@ -3,11 +3,13 @@ using System.Collections;
 using System;
 using System.Collections.Generic;
 
+
 public class DialogTableCell : PUTableCell {
 
 	public enum DialogType {
 		Character,
-		Response
+		Response,
+		Header
 	}
 
 	static public float AnimateTextDuration(DialogType type, string content) {
@@ -69,20 +71,27 @@ public class DialogTableCell : PUTableCell {
 
 	// **************************************************************************************************************
 
+	public override void UnloadContents() {
+		LeanTween.cancel (responseText.gameObject);
+	}
 
+	private PUTextButton responseText;
 
 	public override void UpdateContents() {
 		StoryEngine.Dialog data = cellData as StoryEngine.Dialog;
 
-		PUTextButton responseText = new PUTextButton ();
+		responseText = new PUTextButton ();
 
 		responseText.font = "Fonts/PressStart2P";
 		responseText.value = data.text;
 		responseText.fontSize = 22;
+		if (data.isHelpHeader) {
+			responseText.fontSize = 14;
+		}
 		responseText.lineSpacing = 1.4f;
 		responseText.fontColor = Color.white;
 		responseText.alignment = PlanetUnity2.TextAlignment.upperLeft;
-		responseText.SetFrame (0, 0, 378, 100, 0, 0, "stretch,stretch");
+		responseText.SetFrame (0, 0, 378, 100, 0.5f, 0.5f, "stretch,stretch");
 		responseText.LoadIntoPUGameObject (puGameObject);
 
 		responseText.SetStretchStretch (30, 0, 30, 0);
@@ -93,9 +102,18 @@ public class DialogTableCell : PUTableCell {
 
 		puGameObject.rectTransform.sizeDelta = new Vector2 (responseText.rectTransform.rect.width, height);
 
-		responseText.button.onClick.AddListener (() => {
-			NotificationCenter.postNotification(null, "NavigateToRoom", NotificationCenter.Args("room", data.room));
-		});
+		if (data.isHelpHeader) {
+			responseText.text.color = Color.yellow;
+
+			LeanTween.value (responseText.gameObject, (v) => {
+				responseText.rectTransform.localScale = new Vector3 (v, v, 1.0f);
+			}, 0.98f, 1.02f, 2.0f).setLoopCount (-1).setLoopPingPong ().setEase (LeanTweenType.easeInOutCirc);
+
+		} else {
+			responseText.button.onClick.AddListener (() => {
+				NotificationCenter.postNotification (null, "NavigateToRoom", NotificationCenter.Args ("room", data.room));
+			});
+		}
 
 		AnimateText (DialogType.Response, responseText, data.animationDelay);
 
